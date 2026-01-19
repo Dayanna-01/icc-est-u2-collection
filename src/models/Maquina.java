@@ -14,6 +14,8 @@ public class Maquina implements Comparable<Maquina> {
         this.ip = ip;
         this.codigos = codigos;
         this.subred = calcularSubred();
+        this.riesgo = calcularRiesgo();
+
     }
 
     public String getNombre() {
@@ -41,8 +43,16 @@ public class Maquina implements Comparable<Maquina> {
         String subred = octetos[2];
         return Integer.parseInt(subred);
     }
+
     public int calcularRiesgo() {
-        return 0;
+        int cantidad = codigos.size();
+        if (cantidad <= 2) {
+            return 1;
+        }
+        if (cantidad <= 5) {
+            return 2;
+        }
+        return 3;
     }
 
     @Override

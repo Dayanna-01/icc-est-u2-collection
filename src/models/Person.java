@@ -3,10 +3,12 @@ package models;
 public class Person implements Comparable<Person> {
     private String name;
     private int age;
+    private int cedula;
 
-    public Person(String name, int age) {
+    public Person(String name, int age, int cedula) {
         this.name = name;
         this.age = age;
+        this.cedula = cedula;
     }
 
     public String getName() {
@@ -23,6 +25,14 @@ public class Person implements Comparable<Person> {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
     }
 
     @Override

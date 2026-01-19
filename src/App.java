@@ -1,8 +1,12 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import controllers.MaquinasController;
+import maps.EjerciciosMapas;
+import maps.Maps;
 import models.Maquina;
 import models.Node;
 import models.Person;
@@ -11,8 +15,9 @@ import sets.Sets;
 public class App {
     
     public static void main(String[] args) throws Exception {
-        System.out.println("Dayanna Chacha");
-        Sets setsClase = new Sets();
+        runEjercicios();
+        //System.out.println("Dayanna Chacha");
+        /*Sets setsClase = new Sets();
         
         System.out.println("\nHashSet:");
         Set<String> hashSet = setsClase.construirHashSet();
@@ -32,7 +37,7 @@ public class App {
         Set<String> treeSetConComparador = setsClase.construirTreeSetConComparador();
         System.out.println(treeSetConComparador);
 
-        /*String a1 = "A";
+        String a1 = "A";
         String a2 = "A";
         System.out.println(a1.hashCode());
         System.out.println(a2.hashCode());
@@ -43,7 +48,7 @@ public class App {
         Node<String> n2 = new Node<>("A");
         System.out.println(n1.hashCode());
         System.out.println(n2.hashCode());
-        System.out.println(n1.hashCode() == n2.hashCode());*/
+        System.out.println(n1.hashCode() == n2.hashCode());
 
         // Clase Person
         System.out.println("\nTreeSet de Persons:");
@@ -51,12 +56,29 @@ public class App {
         System.out.println(personsTreeSet);
 
         runMaquina();
+        
+        System.out.println("\nHashMap");
+        Maps maps = new Maps();
+        Map<String, Integer> res = maps.construirHashMaps();
+        System.out.println("Resultado: " + res);
+
+        System.out.println("\nLinked Hash Map");
+        Map<String, Integer> resp =maps.construirLinkedHashMap();
+        System.out.println("Resultado: " + resp);
+        
+        System.out.println("\nPersona Tree Map");
+        Map<Person, Integer> respu = maps.construirTreeMapPersonsObj();
+        System.out.println("Resultado: " + respu);
+
+        System.out.println("\nImprimir Filtro");
+        maps.printFilter(respu);*/
+
     }
 
-     
+        
     // EJEMPLOS DE MAQUINAS
 
-    private static void runMaquina() {
+    /*private static void runMaquina() {
         System.out.println("\nOrdenamientos de maquinas");
         List<Maquina> maquinas = crearMaquinas();
         MaquinasController controller = new MaquinasController();
@@ -120,5 +142,66 @@ public class App {
                 new Maquina("Nodo6", "169.238.150.174", Arrays.asList(6, 14, 3)),
                 new Maquina("DB13", "71.248.50.86", Arrays.asList(17, 11, 12)));
         return maquinas;
+    }*/
+
+        
+    // Ejercicios Mapas
+    
+        private static void runEjercicios(){  
+        System.out.println("Dayanna Chacha");
+        /*List<Integer> list = Arrays.asList(
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        11, 12, 13, 14, 15, 16, 17,
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        18, 19, 20,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+        );
+        EjerciciosMapas ej = new EjerciciosMapas();
+        System.out.println("\nEjercicio 1");  
+
+        ej.contarDuplicados(list); 
+
+
+
+        System.out.println("\nEjercicio 2");
+        List<Integer> list2 = Arrays.asList(
+        4, 5, 1, 2, 5, 4, 3, 2, 1, 6,
+        7, 3, 8, 9, 6, 7, 10
+        );
+
+        EjerciciosMapas ej2 = new EjerciciosMapas();
+        Integer resultado = ej2.primerNoRepetido(list2);
+        System.out.println(resultado);
+
+
+        System.out.println("Ejercicio 3");
+        List<String[]> entradas = List.of(
+            new String[]{"Ana", "80"},
+            new String[]{"Luis", "90"},
+            new String[]{"Carlos", "70"},
+            new String[]{"Ana", "85"},
+            new String[]{"Sofia", "95"},
+            new String[]{"Luis", "88"},
+            new String[]{"Pedro", "60"},
+            new String[]{"Maria", "75"}
+        );
+        EjerciciosMapas ej3 = new EjerciciosMapas();
+        ej3.rankingPuntajes(entradas);*/
+
+
+        System.out.println("\nEjercicio 4");
+        Map<String, Integer> datos = new HashMap<>();
+        datos.put("Computacion-Ana", 85);
+        datos.put("Computacion-Luis", 92);
+        datos.put("Electronica-Carlos", 78);
+        datos.put("Electronica-Maria", 88);
+        datos.put("Computacion-Pedro", 90);
+        datos.put("Mecanica-Juan", 80);
+        datos.put("Mecanica-Sofia", 95);
+
     }
+
 }
