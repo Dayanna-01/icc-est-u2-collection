@@ -85,4 +85,26 @@ public class EjerciciosMapas {
         }
     }
 
+    // Ejercicio 4
+    public void maximoPorCarrera(Map<String, Integer> datos) {
+        Map<String, Integer> maxPorCarrera = new HashMap<>();
+
+        for (Map.Entry<String, Integer> entry : datos.entrySet()) {
+            String clave = entry.getKey();  
+            Integer nota = entry.getValue();
+
+            String carrera = clave.split("-")[0]; 
+            
+            if (!maxPorCarrera.containsKey(carrera)) {
+                maxPorCarrera.put(carrera, nota);
+            } else {
+                if (nota > maxPorCarrera.get(carrera)) {
+                    maxPorCarrera.put(carrera, nota);
+                }
+            }
+        }
+        for (Map.Entry<String, Integer> entry : maxPorCarrera.entrySet()) {
+            System.out.println(entry.getKey() + "-> " + entry.getValue());
+        }
+    }
 }

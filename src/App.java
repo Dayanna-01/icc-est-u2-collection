@@ -201,7 +201,7 @@ public class App {
         datos.put("Computacion-Pedro", 90);
         datos.put("Mecanica-Juan", 80);
         datos.put("Mecanica-Sofia", 95);
-
+        EjerciciosMapas ej = new EjerciciosMapas();
+        ej.maximoPorCarrera(datos);
     }
-
 }

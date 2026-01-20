@@ -34,5 +34,7 @@ Dada una secuencia de enteros, determine el primer número que no se repite, res
 - Se ingresan estudiantes con su carrera y nota final.
 - Mostrar la nota más alta por cada carrera
 
+![alt text](assets/Ejercicio4.png)
+
 
 
